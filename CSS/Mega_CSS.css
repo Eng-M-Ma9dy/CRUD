@@ -1,3 +1,13 @@
 *{
     box-sizing: border-box;
 }
+
+img{
+
+    transition: 1s all;
+}
+
+img:hover{
+
+    transform: scale(1.5);
+}
