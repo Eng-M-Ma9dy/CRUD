@@ -82,7 +82,7 @@ function addProduct(){
             pSN:         productSN.value,
             description: productDescription.value,
             cost:        productCost.value,
-            addDate:     `${getDay} / ${getMonth} / ${getYears}`,
+            addDate:     `${getDay}/${getMonth}/${getYears}`,
             addTime:     `${getHours} : ${getMinutes}`
         }
 
@@ -420,7 +420,7 @@ function moveToDoneList(i,key){
         cost:           firstList[i].cost,
         addDate:        firstList[i].addDate,
         addTime:        firstList[i].addTime,
-        deliveryDate:   `${getDay} / ${getMonth} / ${getYears}`,
+        deliveryDate:   `${getDay}/${getMonth}/${getYears}`,
         deliveryTime:   `${getHours} : ${getMinutes}`,
         report:         document.getElementById("technicalReport").value,
         status:         repair
@@ -580,7 +580,7 @@ function restoreProduct(i){
 &emsp;&emsp;${secondList[i].report}
 `,
         cost:        0,
-        addDate:     `${getDay} / ${getMonth} / ${getYears}`,
+        addDate:     `${getDay}/${getMonth}/${getYears}`,
         addTime:     `${getHours} : ${getMinutes}`
     }
 
