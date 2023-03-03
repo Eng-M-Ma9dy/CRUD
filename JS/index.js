@@ -127,7 +127,7 @@ function displayProduct(key,number){
                 <th>${key[i].category         }</th>
                 <th>${key[i].pSN.toUpperCase()}</th>
                 <th>${key[i].cost             }</th>
-                <th><button class="btn btn-outline-info"    onclick="openDescriptionDiv(${i},1)">Des</button></th>
+                <th><button class="btn btn-outline-info"    onclick="openDescriptionDiv(${i},1)">Info</button></th>
                 <th><button class="btn btn-outline-warning" onclick="getProductForUpdate(${i})">Update</button></th>
                 <th><button class="btn btn-outline-danger"  onclick="openCloseReportDiv(${i},1)">Remove</button></th>
             </tr>
@@ -148,7 +148,7 @@ function displayProduct(key,number){
                 <th>${key[i].category         }</th>
                 <th>${key[i].pSN.toUpperCase()}</th>
                 <th>${key[i].cost             }</th>
-                <th><button class="btn btn-outline-info"    onclick="openDescriptionDiv(${i},2)">Des</button></th>
+                <th><button class="btn btn-outline-info"    onclick="openDescriptionDiv(${i},2)">Info</button></th>
                 <th><button class="btn btn-outline-warning" onclick="restoreProduct(${i})">Restore</button></th>
                 <th><button class="btn btn-outline-danger"  onclick="displayHiddenWarning(${i},1)">Delete</button></th>
             </tr>
