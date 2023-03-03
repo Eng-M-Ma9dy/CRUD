@@ -23,6 +23,14 @@ let indexForWhatsApp;
 
 //----------------------------------------------------------------------------------
 
+function openLinkedIn(){
+
+    window.open("https://www.linkedin.com/in/eng-m-ma9dy/","_blank")
+
+}
+
+//----------------------------------------------------------------------------------
+
 if(localStorage.getItem('CRUD_List1') != null){
 
     firstList = JSON.parse(localStorage.getItem('CRUD_List1'));
