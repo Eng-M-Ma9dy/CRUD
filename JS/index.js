@@ -60,7 +60,6 @@ if(localStorage.getItem('CRUD_List2') != null){
     
 function addProduct(){
 
-    if (firstList.length < 4 && secondList.length < 4) {
     
         let dateTime = new Date();
 
@@ -93,13 +92,6 @@ function addProduct(){
         displayProduct(firstList,1);
 
         clearForm();
-
-    }else{
-        
-        window.alert("Version For Free Trial !!!")
-
-        window.alert("You Can Add 4 User Only For Test")
-    }
 
 }
 
@@ -577,7 +569,8 @@ function restoreProduct(i){
 - Old Cost : ${secondList[i].cost}
 
 - Technical Report :
-&emsp;&emsp;${secondList[i].report}
+
+${secondList[i].report}
 `,
         cost:        0,
         addDate:     `${getDay}/${getMonth}/${getYears}`,
