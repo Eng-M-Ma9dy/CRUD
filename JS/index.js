@@ -629,8 +629,7 @@ function changeDir(key) {
 
     ArEn.splice(0,1,key);
 
-    setToLocalStorage(3);
-
+    setToLocalStorage('CRUD_ArEn',ArEn);
 
     if (key == 1) {
 
