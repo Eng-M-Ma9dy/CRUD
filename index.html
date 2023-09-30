@@ -21,7 +21,7 @@
 </head>
 
 
-<body class="bg-dark text-white">
+<body>
 
     <!---------------------------------------------------------------------------------------------------------------------------->
     <!---------------------------------------------------------------------------------------------------------------------------->
@@ -73,8 +73,8 @@
 
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="#">
-                <h1 class="fs-2 text-center text-md-start"><span class="text-info">MEGA</span></h1>
+            <a class="navbar-brand me-0 p-0" href="">
+                <h1 class="fs-2 text-center text-md-start fw-bolder"><span class="text-info">MEGA</span></h1>
             </a>
 
             <button type="button" class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -85,25 +85,19 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 pt-3 pt-lg-0 w-100 d-flex justify-content-start justify-content-lg-end">
 
-                <form class="d-flex">
+                    <li class="nav-item">
+                        <button id="navHome" type="button" class="nav-link w-100 text-start ps-1 ps-lg-2 text-white bg-transparent border-0 active"
+                            aria-current="page" onclick="openPage(2)">Home</button>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <button id="navDeliveries" type="button" class="nav-link w-100 text-start ps-1 ps-lg-2 text-white bg-transparent border-0"
+                            onclick="openPage(1)">Deliveries</button>
+                    </li>
 
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                            <button id="navHome" type="button" class="nav-link text-white bg-transparent border-0 active"
-                                aria-current="page" onclick="openPage(2)">Home</button>
-                        </li>
-
-                        <li class="nav-item">
-                            <button id="navDeliveries" type="button" class="nav-link text-white bg-transparent border-0"
-                                onclick="openPage(1)">Deliveries</button>
-                        </li>
-
-                    </ul>
-
-                </form>
+                </ul>
 
             </div>
 
@@ -113,7 +107,7 @@
 
     <!---------------------------------------------------------------------------------------------------------------------------->
 
-    <main id="theMain">
+    <main id="theMain" class="bg-dark text-white">
 
         <div id="mainContent">
 
@@ -403,8 +397,12 @@
                     </div>
 
                     <div id="reportDivForRemovedDevice"
-                        class="col-lg-6 mx-auto border border-info rounded-3 bg-black text-white p-5 text-start my-5 d-none">
 
+                        class=" d-flex justify-content-center align-items-center position-absolute top-0 bottom-0 start-0 end-0 d-none">
+
+                        <div class="col-lg-4 border border-info rounded-3 bg-black text-white p-5 text-start">
+
+                            
                         <div class="d-flex justify-content-between align-items-center mb-2">
 
                             <h5 class="text-info">Technical Report :</h5>
@@ -436,6 +434,8 @@
                                     class="ms-3 px-4 btn btn-info">Repaired</button>
 
                             </div>
+
+                        </div>
 
                         </div>
 
@@ -581,10 +581,10 @@
                     </div>
 
                     <div id="warningDivForDeleteDevice"
-                        class="row vh-100 d-flex justify-content-center align-items-center  d-none">
+                        class="row d-flex justify-content-center align-items-center  d-none position-absolute top-0 bottom-0 start-0 end-0">
 
                         <div
-                            class="col-10 col-lg-6 mx-auto border border-info rounded-3 bg-black text-white p-5 text-center">
+                            class="col-10 col-lg-4 mx-auto border border-info rounded-3 bg-black text-white p-5 text-center">
                             <h5>Delete This Device...?</h5>
 
                             <div class="d-flex justify-content-center mt-5">
@@ -625,7 +625,7 @@
                     <div>
 
                         <h1 style="font-size: 60px;" class=" text-start fw-bolder"><span
-                                class="text-info">CRUD</span></h1>
+                                class="text-info">MEGA</span></h1>
 
                         <h5 class="fs-2 text-start"><span class="text-info ">C</span>reate <span
                                 class="text-info ">R</span>etrieve <span class="text-info ">U</span>pdate <span
@@ -643,6 +643,10 @@
                 </div>
 
             </div>
+
+
+
+
 
 
             <h5 class="mb-3">Information :</h5>
