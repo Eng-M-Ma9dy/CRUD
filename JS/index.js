@@ -31,6 +31,7 @@ function openLink(url){
 /* ----------------------------------------------------------------------------- */
 
 let customerName        = document.getElementById('customerName');
+let phone_Key            = document.getElementById('phone_Key')
 let customerPhone       = document.getElementById('customerPhone');
 
 let deviceReceipt      = document.getElementById('deviceReceipt');
@@ -92,8 +93,225 @@ if(localStorage.getItem('CRUD_ArEn') != null){
     ArEn = [];
 }
 
+
+
+
+
+
 //----------------------------------------------------------------------------------
+
+function receiptValidation(){
+
+    changeBTN_Color()
     
+    let deviceReceiptInput =/^[0-9]{3,10}$/;
+
+    if (deviceReceiptInput.test(deviceReceipt.value)){
+
+        document.getElementById('invalidReceipt').classList.add('d-none')
+
+        return true
+
+    }else{
+
+        document.getElementById('invalidReceipt').classList.remove('d-none')
+
+        return false
+    }
+
+}
+
+function customerNameValidation(){
+
+    changeBTN_Color()
+
+    let customerNameInput =/^[a-zA-Z\s]{3,25}$/;
+
+    if (customerNameInput.test(customerName.value)){
+
+        document.getElementById('invalidCustomerName').classList.add('d-none')
+
+        return true
+
+    }else{
+
+        document.getElementById('invalidCustomerName').classList.remove('d-none')
+
+        return false
+    }
+
+}
+
+function phoneValidation(){
+
+    changeBTN_Color()
+
+    let phoneRegex =/^01[0125][0-9]{8}$/;
+
+    if (phoneRegex.test(customerPhone.value)){
+
+        document.getElementById('invalidPhone').classList.add('d-none')
+        
+        return true
+
+    }else{
+
+        document.getElementById('invalidPhone').classList.remove('d-none')
+
+        return false
+    }
+
+}
+
+
+function SN_Validation(){
+
+    changeBTN_Color()
+
+    let SN_Input =/^[a-zA-Z0-9]{3,15}$/;
+
+    if (SN_Input.test(deviceSN.value)){
+
+        document.getElementById('invalidSN').classList.add('d-none')
+
+        return true
+
+    }else{
+
+        document.getElementById('invalidSN').classList.remove('d-none')
+
+        return false
+    }
+
+}
+
+function info_Validation(){
+
+    changeBTN_Color()
+
+    let info_Input =/^[a-zA-Z0-9\,\.\/\s\-\_\*\\]{0,200}$/;
+
+    if (info_Input.test(deviceDescription.value)){
+
+        document.getElementById('invalidInfo').classList.add('d-none')
+
+        return true
+
+    }else{
+
+        document.getElementById('invalidInfo').classList.remove('d-none')
+
+        return false
+    }
+
+}
+
+//---------------------------------------------------------------------------------
+
+function checkAllInputForAdd(){
+    
+    if (
+
+        receiptValidation() === true
+
+        &&
+
+        customerNameValidation() === true
+        
+        &&
+
+        phoneValidation() === true
+
+        &&
+
+        SN_Validation() === true
+
+        &&
+
+        info_Validation() === true
+
+        ){
+
+        addBTN.classList.replace('btn-outline-info','btn-outline-success')
+
+        return addDevice()
+
+    }else{
+
+        addBTN.classList.replace('btn-outline-info','btn-outline-danger')
+
+        return false
+
+    }
+}
+
+function checkAllInputForUpdate(){
+    
+    if (
+
+        receiptValidation() === true
+
+        &&
+
+        customerNameValidation() === true
+        
+        &&
+
+        phoneValidation() === true
+
+        &&
+
+        SN_Validation() === true
+
+        &&
+
+        info_Validation() === true
+
+        ){
+
+        updateBTN.classList.replace('d-block','d-none')
+
+        addBTN.classList.replace('d-none','d-block')
+
+        return updateTheDevice(firstList[indexOfArray].addDate,firstList[indexOfArray].addTime,deviceInfo)
+
+    }else{
+
+        updateBTN.classList.replace('btn-outline-warning','btn-outline-danger')
+
+        return false
+
+    }
+}
+
+function changeBTN_Color(){
+
+    addBTN.classList.replace('btn-outline-danger','btn-outline-info')
+
+    addBTN.classList.replace('btn-outline-success','btn-outline-info')
+
+    updateBTN.classList.replace('btn-outline-danger','btn-outline-warning')
+
+}
+//---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------------
+
 function addDevice(){
     
     let dateTime = new Date();
@@ -140,6 +358,7 @@ function addDevice(){
     let device ={
         receipt:     deviceReceipt.value,
         name:        customerName.value,
+        phoneKey:    phone_Key.value,
         phone:       customerPhone.value,
         category:    deviceCategory.value,
         pSN:         deviceSN.value,
@@ -226,8 +445,9 @@ function clearForm(flag){
     
     deviceReceipt.value     = flag? flag.receipt:""
     customerName.value      = flag? flag.name:"" 
+    phone_Key.value         = flag? flag.phoneKey:"+2"
     customerPhone.value     = flag? flag.phone:""
-    deviceCategory.value    = flag? flag.category:""
+    deviceCategory.value    = flag? flag.category:"Not Selected"
     deviceSN.value          = flag? flag.pSN:""
     deviceDescription.value = flag? flag.description:""
     deviceCost.value        = flag? flag.cost:""
@@ -238,6 +458,8 @@ function clearForm(flag){
 
 function openDescriptionDiv(i,key){
     
+    document.getElementById("navbar").classList.add("d-none")
+
     for (let i = 0; i < disableEnable.length; i++) {
     
         disableEnable[i].classList.add('d-none')
@@ -257,11 +479,13 @@ function openDescriptionDiv(i,key){
     
         document.getElementById("timeOfEnter1").innerHTML = firstList[i].addTime
     
-        document.getElementById("userName1").innerHTML = firstList[i].name;
+        document.getElementById("userName1").innerHTML = firstList[i].name.toUpperCase();
     
+        document.getElementById("userPhoneKey1").innerHTML = firstList[i].phoneKey;
+
         document.getElementById("userPhoneNumber1").innerHTML = firstList[i].phone;
 
-        document.getElementById("userPhoneIcon1").setAttribute(`href`,`tel:+2${firstList[i].phone}`);
+        document.getElementById("userPhoneIcon1").setAttribute(`href`,`tel:${firstList[i].phoneKey}${firstList[i].phone}`);
 
         document.getElementById("deviceType1").innerHTML = firstList[i].category;
 
@@ -282,11 +506,13 @@ function openDescriptionDiv(i,key){
     
         document.getElementById("timeOfEnter2").innerHTML = secondList[i].addTime
     
-        document.getElementById("userName2").innerHTML = secondList[i].name;
+        document.getElementById("userName2").innerHTML = secondList[i].name.toUpperCase();
         
+        document.getElementById("userPhoneKey2").innerHTML = secondList[i].phoneKey;
+
         document.getElementById("userPhoneNumber2").innerHTML = secondList[i].phone;
         
-        document.getElementById("userPhoneIcon2").setAttribute(`href`,`tel:+2${secondList[i].phone}`);
+        document.getElementById("userPhoneIcon2").setAttribute(`href`,`tel:${secondList[i].phoneKey}${secondList[i].phone}`);
     
         document.getElementById("deviceType2").innerHTML = secondList[i].category;
 
@@ -309,15 +535,17 @@ function openDescriptionDiv(i,key){
 
 function openUserWhatsapp(key){
 
-    if (key == 1) return window.open(`https://wa.me/+2${firstList[indexOfArray].phone}`,"_blank")
+    if (key == 1) return window.open(`https://wa.me/${firstList[indexOfArray].phoneKey}${firstList[indexOfArray].phone}`,"_blank")
 
 
-    window.open(`https://wa.me/+2${secondList[indexOfArray].phone}`,"_blank")
+    window.open(`https://wa.me/${secondList[indexOfArray].phoneKey}${secondList[indexOfArray].phone}`,"_blank")
 }
 
 //----------------------------------------------------------------------------------
 
 function closeDescriptionDiv(key){
+
+    document.getElementById("navbar").classList.replace("d-none","d-block")
 
     if (key == 1) {
 
@@ -379,6 +607,7 @@ function updateTheDevice(date,time,deviceInfo){
     let device ={
         receipt:     deviceReceipt.value,
         name:        customerName.value,
+        phoneKey:    phone_Key.value,
         phone:       customerPhone.value,
         category:    deviceCategory.value,
         pSN:         deviceSN.value,
@@ -485,6 +714,7 @@ function moveToDoneList(i,status){
     let device ={
         receipt:        firstList[i].receipt,
         name:           firstList[i].name,
+        phoneKey:       firstList[i].phoneKey,
         phone:          firstList[i].phone,
         category:       firstList[i].category,
         pSN:            firstList[i].pSN,
@@ -671,6 +901,10 @@ function openPage(key){
 
     if (key == 1) {
 
+        document.getElementById('navHome').classList.remove('active')
+
+        document.getElementById('navDeliveries').classList.add('active')
+
         for (let i = 0; i < disableEnable.length; i++) {
     
             disableEnable[i].classList.add('d-none')
@@ -684,6 +918,10 @@ function openPage(key){
         document.getElementById("sDB2_2").value = ""
     
     }else if (key == 2) {
+
+        document.getElementById('navHome').classList.add('active')
+
+        document.getElementById('navDeliveries').classList.remove('active')
 
         for (let i = 0; i < disableEnable.length; i++) {
     
@@ -750,6 +988,7 @@ function restoreDevice(i){
     let device ={
         receipt:     secondList[i].receipt,
         name:        secondList[i].name,
+        phoneKey:    secondList[i].phoneKey,
         phone:       secondList[i].phone,
         category:    secondList[i].category,
         pSN:         secondList[i].pSN,
@@ -763,7 +1002,11 @@ function restoreDevice(i){
 `* Old Technical Report *
 ------------------------
 ${secondList[i].report}
-------------------------------------------------
+
+
+* New Notes *
+-------------
+
 `,
 
         cost:        0,
@@ -836,9 +1079,7 @@ function deleteDevice(){
 
 function createReport(){
 
-    document.getElementById("firstPage").classList.add("d-none")
-    document.getElementById("secondPage").classList.add("d-none")
-    document.getElementById("contact").classList.add("d-none")
+    document.getElementById("theMain").classList.add("d-none")
 
     document.getElementById("reportPage").classList.replace("d-none","d-block")
 
@@ -846,6 +1087,8 @@ function createReport(){
 
     document.getElementById("userName3").innerHTML = secondList[indexOfArray].name;
     
+    document.getElementById("userPhoneKey3").innerHTML = secondList[indexOfArray].phoneKey;
+
     document.getElementById("userPhoneNumber3").innerHTML = secondList[indexOfArray].phone;
 
     document.getElementById("dateOfEnter3").innerHTML = secondList[indexOfArray].addDate
@@ -869,12 +1112,22 @@ document.body.addEventListener("keyup",function(e){
 
     if (e.key == "Escape") {
 
-        document.getElementById("reportPage").classList.add("d-none")
-        document.getElementById("firstPage").classList.add("d-none")
-
-        document.getElementById("secondPage").classList.replace("d-none","d-block")
-
+        closeReportDiv()
     }
    
 });
 
+
+document.getElementById('titleBTN').addEventListener("click",function(){
+
+    closeReportDiv()
+   
+});
+
+function closeReportDiv(){
+
+    document.getElementById("reportPage").classList.add("d-none")
+
+    document.getElementById("theMain").classList.replace("d-none","d-block")
+
+}
