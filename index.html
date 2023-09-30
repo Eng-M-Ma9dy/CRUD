@@ -1,6 +1,6 @@
-<!DOCTYPE html>    
+<!DOCTYPE html>
 
-<html>    
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -18,10 +18,10 @@
     <link href="CSS/bootstrap.min.css" rel="stylesheet" />
     <link href="CSS/all.min.css" rel="stylesheet" />
     <link href="CSS/index.css" rel="stylesheet" />
-</head> 
+</head>
 
 
-<body class="bg-black text-white">    
+<body class="bg-dark text-white">
 
     <!---------------------------------------------------------------------------------------------------------------------------->
     <!---------------------------------------------------------------------------------------------------------------------------->
@@ -64,457 +64,624 @@
     </div>
 
     <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Navbar -->
+    <!------------>
 
-    <section id="firstPage" class="">    
+    <nav id="navbar"
+        class="navbar navbar-dark navbar-expand-md bg-body-tertiary position-fixed top-0 w-100 px-md-5 border-bottom border-3 border-info">
 
-        <div class="container-lg my-5 disableEnable">    
-            
-            <div class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center col-lg-10 mx-auto border-bottom border-3 border-info pb-3">    
+        <div class="container-fluid">
 
-                <div>    
+            <a class="navbar-brand" href="#">
+                <h1 class="fs-2 text-center text-md-start"><span class="text-info">MEGA</span></h1>
+            </a>
 
-                    <h1 class="fs-2 text-center text-md-start"><span class="text-info">C R U D</span></h1>    
+            <button type="button" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    <h5 class="fs-2 text-center text-md-start"><span class="text-info ">C</span>reate <span class="text-info ">R</span>etrieve <span class="text-info ">U</span>pdate <span class="text-info ">D</span>elete</h5>    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                </div>    
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
-    
-                <div class="mb-3 mb-md-0">    
+                <form class="d-flex">
 
-                    <button class="bg-transparent text-white border-0 p-0"
-                        onclick="openLink('eng-m-ma9dy.github.io/MAGDY/')"><img src="src/Images/Logo-MM.jpg"
-                            class="footer_logo rounded-circle" alt=""></button>    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                </div>    
+                        <li class="nav-item">
+                            <button id="navHome" type="button" class="nav-link text-white bg-transparent border-0 active"
+                                aria-current="page" onclick="openPage(2)">Home</button>
+                        </li>
 
-            </div>    
+                        <li class="nav-item">
+                            <button id="navDeliveries" type="button" class="nav-link text-white bg-transparent border-0"
+                                onclick="openPage(1)">Deliveries</button>
+                        </li>
 
-        </div>    
+                    </ul>
 
-        <form id="allInputs" class="container-lg my-5">    
+                </form>
 
-            <div class="form-group col-lg-10 mx-auto">    
-
-                <label Class = "text-info" for="deviceReceipt">Device Receipt :</label Class = "text-info">    
-
-                <input id="deviceReceipt" type="number" class="form-control mt-3 mb-4">    
-
-            </div>    
-
-            <!-- --------- -->    
-    
-            <div class="form-group col-lg-10 mx-auto">    
-
-                <label Class = "text-info" for="customerName">Customer Name :</label Class = "text-info">    
-
-                <input id="customerName" type="=text" class="form-control mt-3 mb-4">    
-
-            </div>    
-
-            <!-- --------- -->    
-    
-            <div class="form-group col-lg-10 mx-auto">    
-
-                <label Class = "text-info" for="customerPhone">Phone Number :</label Class = "text-info">    
-
-                <input id="customerPhone" type="=text" class="form-control mt-3 mb-4">    
-
-            </div>    
-
-            <!-- --------- -->    
-    
-            <div class="form-group col-lg-10 mx-auto">    
-
-                <label Class = "text-info" for="deviceCategory">Device Category :</label Class = "text-info">    
-
-                <select id="deviceCategory" class="form-control mt-3 mb-4">    
-
-                    <option value="" selected></option>    
-
-                    <option value="Laptop">Laptop</option>    
-
-                    <option value="PC-Tower">PC-Tower</option>    
-
-                    <option value="PC-Desktop">PC-Desktop</option>    
-
-                    <option value="Server">Server</option>    
-
-                    <option value="Screen">Screen</option>    
-
-                    <option value="Printer">Printer</option>    
-
-                    <option value="Scanner">Scanner</option>    
-
-                    <option value="Router">Router</option>    
-
-                    <option value="Switch">Switch</option>    
-
-                    <option value="Adapter">Adapter</option>    
-
-                    <option value="UPS">UPS</option>    
-
-                    <option value="Other">Other</option>    
-
-                </select>    
-
-            </div>    
-
-            <!-- --------- -->    
-    
-            <div class="form-group col-lg-10 mx-auto">    
-
-                <label Class = "text-info" for="deviceSN">Device SN :</label Class = "text-info">    
-
-                <input id="deviceSN" type="=text" class="form-control mt-3 mb-4">    
-
-            </div>    
-
-            <!-- --------- -->    
-    
-            <div class="form-group col-lg-10 mx-auto">    
-
-                <label Class = "text-info" for="deviceDescription">Device Info :</label Class = "text-info">    
-
-                <textarea id="deviceDescription" type="=text" rows="6" class="textChangeDir form-control mt-3 mb-4"></textarea>    
-
-            </div>    
-
-            <!-- --------- -->    
-    
-            <div class="form-group col-lg-10 mx-auto">    
-
-                <label Class = "text-info" for="deviceCost">The Cost :</label Class = "text-info">    
-
-                <input id="deviceCost" type="number" class="form-control mt-3 mb-4">    
-
-            </div>    
-
-            <!-- --------- -->    
-    
-            <div class="form-group col-lg-10 mx-auto">    
-
-                <button id="addBTN"    onclick="addDevice()" class="btn btn-outline-info my-2">Add Device</button>    
-
-                <button id="updateBTN" onclick="updateTheDevice(firstList[indexOfArray].addDate,firstList[indexOfArray].addTime,deviceInfo)" class="btn btn-outline-warning my-2 d-none">Update Device</button>    
-
-            </div>    
-
-    
-        </form>    
-
-        <div class="container-lg">        
-
-            <div id="table1" class="col-12 mx-auto my-5">    
-
-                <div id="sDB1" class="form-group col-lg-8 mx-auto mb-5">    
-
-                    <input id="sDB1_1" oninput="searchDB(this.value,1)" type="=text" placeholder="Search" class="form-control mt-3 mb-4">    
-
-                </div>
-
-                <div class="w-100  overflow-auto">
-
-                    <table class="table text-white text-center">    
-
-                        <thead class="text-info">    
-    
-                            <th>Receipt</th>    
-    
-                            <th>Category</th>    
-    
-                            <th>SN</th>    
-    
-                            <th>Price</th>    
-    
-                            <th>Info</th>    
-    
-                            <th>Update</th>    
-    
-                            <th>Delete</th>    
-    
-                        </thead>    
-        
-                        <tbody id="tableData1">    
-    
-                        </tbody>    
-    
-                    </table>
-
-                </div>
-                    
-
-                <div class="container-lg d-flex justify-content-between align-items-center text-end border border-3 border-info border-end-0 border-start-0 border-bottom-0 mt-5">    
-
-                    <div>
-                        <button onclick="changeDir(2)" class="arBTN btn btn-info mt-3 mb-5">Ar</button>    
-                        <button onclick="changeDir(1)" class="enBTN btn btn-info mt-3 mb-5 d-none">En</button>
-                    </div>
-                        
-
-                    <button onclick="openPage(1)" class="btn btn-danger mt-3 mb-5">Removed Devices</button>    
-
-                </div>
-
-            </div>    
-
-            <div id="descriptionDiv1" class="col-lg-8 mx-auto my-5 -dnone border border-info rounded-3 p-3 overflow-auto d-none">    
-
-                <div class="d-flex justify-content-between align-items-center mb-2">    
-
-                    <h5 class="text-info">The Description :</h5>    
-
-                    <button onclick="closeDescriptionDiv(1)" class="bg-transparent border-0 fs-3 text-info"><i class="fa-regular fa-circle-xmark"></i></button>    
-
-                </div>    
-
-                <p class="text-info mb-0">Name &#160;:&#160; <span id="userName1" class="text-white"></span></p>    
-
-                <div class="d-flex justify-content-start align-items-center my-2">    
-
-                    <p class="text-info mb-0">Phone :&#160;</p>    
-
-                    <a id="userPhoneIcon1" style="text-decoration: none;" href="" class="bg-transparent text-white ms-2"><i class="fa-solid fa-phone"></i></a>    
-
-                    <button class="btn border-0 text-white fs-5 p-0 mx-2 mb-1" onclick="openUserWhatsapp(1)">&ensp;<i class="fa-brands fa-whatsapp"></i></button>    
-
-                    <p id="userPhoneNumber1" class="text-white mb-1 mx-2"></p>    
-
-                </div>    
-
-                <p class="text-info mb-2">Received :&#160;<span id="dateOfEnter1"  class="text-white"></span>&emsp;Time : <span id="timeOfEnter1" class="text-white"></span></p>    
-
-                <p class="text-info mt-3">Device Type :&#160;<span id="deviceType1" class="text-white"></span>&emsp;SN :&#160;<span id="deviceSN1" class="text-white"></span></p>    
-
-                <h5 class="text-info mt-4 mb-2">Notes :</h5>    
-
-                <pre id="oldInfo" class="fs-5 mb-0"></pre>    
-
-                <pre id="contentOfDescriptionDiv1" class="textChangeDir fs-5 border border-info rounded-3 mt-3 p-3"></pre>
-
-                <div class="mt-5">
-                    <button onclick="changeDir(2)" class="arBTN btn btn-info">Ar</button>    
-                    <button onclick="changeDir(1)" class="enBTN btn btn-info d-none">En</button>
-                </div>
-
-            </div>    
-    
-            <div id="reportDivForRemovedDevice" class="col-lg-6 mx-auto border border-info rounded-3 bg-black text-white p-5 text-start my-5 d-none">    
-
-                <div class="d-flex justify-content-between align-items-center mb-2">    
-    
-                    <h5 class="text-info">Technical Report :</h5>    
-    
-                    <button onclick="openCloseReportDiv(1000,2)" class="bg-transparent border-0 fs-3 text-info"><i class="fa-regular fa-circle-xmark"></i></button>    
-    
-                </div>
-    
-                <textarea name="" id="technicalReport" cols="30" rows="10" class="textChangeDir w-100 h-100 my-3 rounded-3 p-3"></textarea>
-    
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-
-                    <div class="mt-5 d-none d-md-block">
-                        <button onclick="changeDir(2)" class="arBTN btn btn-info">Ar</button>    
-                        <button onclick="changeDir(1)" class="enBTN btn btn-info d-none">En</button>
-                    </div>
-                    
-                    <div class="d-flex justify-content-center justify-content-md-between align-items-center mt-5">    
-        
-                        <button onclick="moveToDoneList(indexOfArray,'Rejected')" class="me-3 px-4 btn btn-danger">Rejected</button>    
-        
-                        <button onclick="moveToDoneList(indexOfArray,'Repaired')" class="ms-3 px-4 btn btn-info">Repaired</button>    
-        
-                    </div>
-
-                </div>    
-    
             </div>
 
         </div>
 
-    </section>    
+    </nav>
 
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+    <!---------------------------------------------------------------------------------------------------------------------------->
 
-    <section id="secondPage" class="d-none">    
+    <main id="theMain">
 
-        <div class="container-lg">        
+        <div id="mainContent">
 
-            <div id="table2" class="col-12 mx-auto my-5"> 
-                
-                <div id="sDB2" class="form-group col-lg-8 mx-auto mb-5">    
+            <!---------------------------------------------------------------------------------------------------------------------------->
 
-                    <input id="sDB2_2" oninput="searchDB(this.value,2)" type="=text" placeholder="Search" class="form-control mt-3 mb-4">    
-    
-                </div>
+            <section id="firstPage" class="py-5">
 
-                <div class="w-100 overflow-auto">
+                <div class="container-lg py-5 disableEnable">
 
-                    <table class="table text-center text-white">    
+                    <div
+                        class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center col-lg-10 mx-auto border border-3 border-info border-end-0 border-start-0 border-top-0  pb-3">
 
-                        <thead class="text-info">    
-    
-                            <th>Receipt</th>    
-    
-                            <th>Category</th>    
-    
-                            <th>SN</th>    
-    
-                            <th>Price</th>    
-    
-                            <th>Info</th>    
-    
-                            <th>Update</th>    
-    
-                            <th>Delete</th>    
-    
-                        </thead>    
-    
-        
-                        <tbody id="tableData2">    
-    
-                        </tbody>    
-    
-                    </table>
-                    
-                </div>
-                    
+                        <div>
 
-                <div class="container-lg d-flex justify-content-between align-items-center  text-end border border-3 border-info border-end-0 border-start-0 border-bottom-0 mt-5">    
+                            <h1 class="fs-2 text-center text-md-start"><span class="text-info">C R U D</span></h1>
 
-                    <div>
-                        <button onclick="changeDir(2)" class="arBTN btn btn-info mt-3 mb-5">Ar</button>    
-                        <button onclick="changeDir(1)" class="enBTN btn btn-info mt-3 mb-5 d-none">En</button>
+                            <h5 class="fs-2 text-center text-md-start"><span class="text-info ">C</span>reate <span
+                                    class="text-info ">R</span>etrieve <span class="text-info ">U</span>pdate <span
+                                    class="text-info ">D</span>elete</h5>
+
+                        </div>
+
+
+                        <div class="mb-3 mb-md-0">
+
+                            <button type="button" class="bg-transparent text-white border-0 p-0"
+                                onclick="openLink('eng-m-ma9dy.github.io/MAGDY/')"><img src="src/Images/Logo-MM.jpg"
+                                    class="footer_logo rounded-circle" alt=""></button>
+
+                        </div>
+
                     </div>
 
-                    <button onclick="openPage(2)" class="btn btn-info mt-3 mb-5">Main Page</button>    
-        
                 </div>
 
-            </div>    
+                <form id="allInputs" class="container-lg mb-5">
 
-            <div id="descriptionDiv2" class="col-lg-8 mx-auto border border-info rounded-3 my-5 p-3 overflow-auto d-none">    
+                    <div class="form-group col-lg-10 mx-auto">
 
-                <div class="d-flex justify-content-between align-items-center mb-2">    
+                        <label Class="text-info" for="deviceReceipt">Device Receipt :</label Class="text-info">
 
-                    <h5 class="text-info">The Description :</h5>    
+                        <input id="deviceReceipt" onkeyup="receiptValidation()" type="number"
+                            class="form-control mt-3 mb-4" placeholder="Receipt Number">
 
-                    <button onclick="closeDescriptionDiv(2)" class="bg-transparent border-0 text-info fs-3"><i class="fa-regular fa-circle-xmark"></i></button>    
-                    
-                </div>    
+                        <p id="invalidReceipt" class="text-danger mb-4 d-none">Invalid Receipt Number</p>
 
-                <p class="text-info mb-0">Name &#160;:&#160; <span id="userName2" class="text-white"></span></p>    
-
-                <div class="d-flex justify-content-start align-items-center my-2">    
-
-                    <p class="text-info mb-0">Phone :&#160;</p>    
-
-                    <a id="userPhoneIcon2" style="text-decoration: none;" href="" class="bg-transparent text-white ms-2"><i class="fa-solid fa-phone"></i></a>    
-
-                    <button class="btn border-0 text-white fs-5 p-0 mx-2 mb-1" onclick="openUserWhatsapp(2)">&ensp;<i class="fa-brands fa-whatsapp"></i></button>    
-
-                    <p id="userPhoneNumber2" class="text-white mb-1 mx-2"></p>    
-
-                </div>    
-
-                <p class="text-info mb-2">Received &#160;: <span id="dateOfEnter2"  class="text-white"></span>&emsp;Time : <span id="timeOfEnter2" class="text-white"></span></p>    
-
-                <p class="text-info mt-3">Delivered : <span id="dateOfOut2" class="text-white"></span>&emsp;Time : <span class="text-white" id="timeOfOut2"></span></p>    
-
-                <p class="text-info mt-3">Device Type :&#160;<span id="deviceType2" class="text-white"></span>&emsp;SN :&#160;<span id="deviceSN2" class="text-white"></span></p>    
-                
-                <p class="text-info mt-3">Device Status :&#160;<span id="deviceStatus2" class="text-white"></span></p>    
-
-                <h5 class="text-info mt-4 mb-3">Notes :</h5>    
-
-                <pre id="contentOfDescriptionDiv2" class="textChangeDir fs-5 border border-info rounded-3 p-3"></pre>
-                
-                <h5 class="text-info mt-4 mb-3">Technical Report :</h5>    
-
-                <pre id="contentOfReportDiv2" class="textChangeDir fs-5 border border-info rounded-3 p-3"></pre>
-   
-                <div class="d-flex justify-content-between align-items-center">
-
-                    <div class="mt-5">
-                        <button onclick="changeDir(2)" class="arBTN btn btn-info">Ar</button>    
-                        <button onclick="changeDir(1)" class="enBTN btn btn-info d-none">En</button>
                     </div>
 
-                    <button onclick="createReport()" class="btn btn-outline-warning mt-5">Create Report</button>    
+                    <!-- --------- -->
 
-                </div>
-                
-            </div>
+                    <div class="form-group col-lg-10 mx-auto">
 
-            <div id="warningDivForDeleteDevice" class="row vh-100 d-flex justify-content-center align-items-center  d-none">    
+                        <label Class="text-info" for="customerName">Customer Name :</label Class="text-info">
 
-                <div class="col-10 col-lg-6 mx-auto border border-info rounded-3 bg-black text-white p-5 text-center">
-                    <h5>Delete This Device...?</h5>    
+                        <input id="customerName" placeholder="Full Name" onkeyup="customerNameValidation()" type="=text"
+                            class="form-control mt-3 mb-4">
 
-                    <div class="d-flex justify-content-center mt-5">    
-    
-                        <button onclick="displayHiddenWarning(1000000,2)" class="mx-3 px-4 btn btn-info">No</button>    
-    
-                        <button onclick="deleteDevice()" class="mx-3 px-4 btn btn-danger">Yes</button>    
-    
+                        <p id="invalidCustomerName" class="text-danger mb-4 d-none">Invalid Name</p>
+
                     </div>
+
+                    <!-- --------- -->
+
+                    <div class="form-group col-lg-10 mx-auto">
+
+                        <label Class="text-info" for="customerPhone">Phone Number :</label Class="text-info">
+
+                        <div class="d-flex justify-content-center align-items-center mt-3 mb-4">
+
+
+
+
+
+                            <select style="width: 80px;" name="phone_Key" id="phone_Key" class="form-control me-2">
+                                <option value="+2" selected class="text-center"> +2 </option>
+                            </select>
+
+                            <input id="customerPhone" onkeyup="phoneValidation()" type="=text" class="form-control"
+                                placeholder="01000000000">
+
+                        </div>
+                        <p id="invalidPhone" class="text-danger mb-4 d-none">Invalid Phone Number</p>
+
+                    </div>
+
+                    <!-- --------- -->
+
+                    <div class="form-group col-lg-10 mx-auto">
+
+                        <label Class="text-info" for="deviceCategory">Device Category :</label Class="text-info">
+
+                        <select id="deviceCategory" class="form-control mt-3 mb-4">
+
+                            <option value="Not Selected" selected>Not Selected</option>
+
+                            <option value="Laptop">Laptop</option>
+
+                            <option value="PC-Tower">PC-Tower</option>
+
+                            <option value="PC-Desktop">PC-Desktop</option>
+
+                            <option value="Server">Server</option>
+
+                            <option value="Screen">Screen</option>
+
+                            <option value="Printer">Printer</option>
+
+                            <option value="Scanner">Scanner</option>
+
+                            <option value="Router">Router</option>
+
+                            <option value="Switch">Switch</option>
+
+                            <option value="Adapter">Adapter</option>
+
+                            <option value="UPS">UPS</option>
+
+                            <option value="Other">Other</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- --------- -->
+
+                    <div class="form-group col-lg-10 mx-auto">
+
+                        <label Class="text-info" for="deviceSN">Device SN :</label Class="text-info">
+
+                        <input id="deviceSN" placeholder="Serial Number" onkeyup="SN_Validation()" type="=text"
+                            class="form-control mt-3 mb-4">
+
+                        <p id="invalidSN" class="text-danger mb-4 d-none">Invalid Serial Number</p>
+
+                    </div>
+
+                    <!-- --------- -->
+
+                    <div class="form-group col-lg-10 mx-auto">
+
+                        <label Class="text-info" for="deviceDescription">Device Info :</label Class="text-info">
+
+                        <textarea id="deviceDescription" onkeyup="info_Validation()" type="=text" rows="6"
+                            class="textChangeDir form-control mt-3 mb-4"></textarea>
+
+                        <p id="invalidInfo" class="text-danger mb-4 d-none">Letters & Number Only</p>
+
+                    </div>
+
+                    <!-- --------- -->
+
+                    <div class="form-group col-lg-10 mx-auto">
+
+                        <label Class="text-info" for="deviceCost">The Cost :</label Class="text-info">
+
+                        <input id="deviceCost" placeholder="The Cost" type="number" class="form-control mt-3 mb-4">
+
+                    </div>
+
+                    <!-- --------- -->
+
+                    <div class="form-group col-lg-10 mx-auto">
+
+                        <button type="button" id="addBTN" onclick="checkAllInputForAdd()"
+                            class="btn btn-outline-info my-2">Add Device</button>
+
+                        <button type="button" id="updateBTN" onclick="checkAllInputForUpdate()"
+                            class="btn btn-outline-warning my-2 d-none">Update Device</button>
+
+                    </div>
+
+
+                </form>
+
+                <div class="container-lg">
+
+                    <div id="table1" class="col-12 mx-auto my-5">
+
+                        <div id="sDB1" class="form-group col-lg-8 mx-auto mb-5">
+
+                            <input id="sDB1_1" oninput="searchDB(this.value,1)" type="=text" placeholder="Search"
+                                class="form-control mt-3 mb-4">
+
+                        </div>
+
+                        <div class="w-100  overflow-auto">
+
+                            <table class="table text-white text-center">
+
+                                <thead class="text-info">
+
+                                    <th>Receipt</th>
+
+                                    <th>Category</th>
+
+                                    <th>SN</th>
+
+                                    <th>Price</th>
+
+                                    <th>Info</th>
+
+                                    <th>Update</th>
+
+                                    <th>Delete</th>
+
+                                </thead>
+
+                                <tbody id="tableData1">
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <div
+                            class="container-lg d-flex justify-content-between align-items-center text-end border border-3 border-info border-end-0 border-start-0 border-bottom-0 mt-5">
+
+                            <div>
+                                <button type="button" onclick="changeDir(2)" class="arBTN btn btn-info my-3">Ar</button>
+                                <button type="button" onclick="changeDir(1)"
+                                    class="enBTN btn btn-info my-3 d-none">En</button>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div id="descriptionDiv1"
+                        class="col-lg-8 mx-auto border border-info rounded-3 p-3 overflow-auto d-none">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+
+                            <h5 class="text-info">The Description :</h5>
+
+                            <button type="button" onclick="closeDescriptionDiv(1)"
+                                class="bg-transparent border-0 fs-3 text-info"><i
+                                    class="fa-regular fa-circle-xmark"></i></button>
+
+                        </div>
+
+                        <p class="text-info mb-0">Name &#160;:&#160; <span id="userName1" class="text-white"></span></p>
+
+                        <div class="d-flex justify-content-start align-items-center my-2">
+
+                            <p class="text-info mb-0">Phone :&#160;</p>
+
+                            <a id="userPhoneIcon1" style="text-decoration: none;" href=""
+                                class="bg-transparent text-white ms-2"><i class="fa-solid fa-phone megaI"></i></a>
+
+                            <button type="button" class="btn border-0 text-white fs-5 p-0 mx-2 mb-1"
+                                onclick="openUserWhatsapp(1)">&ensp;<i class="fa-brands fa-whatsapp megaI"></i></button>
+
+                            <div class="d-flex">
+
+                                <p id="userPhoneKey1" class="text-white mb-1 ms-2"></p>
+
+                                <p id="userPhoneNumber1" class="text-white mb-1 ms-1"></p>
+
+                            </div>
+
+                        </div>
+
+                        <p class="text-info mb-2">Received :&#160;<span id="dateOfEnter1"
+                                class="text-white"></span>&emsp;Time : <span id="timeOfEnter1"
+                                class="text-white"></span></p>
+
+                        <p class="text-info mt-3">Device Type :&#160;<span id="deviceType1"
+                                class="text-white"></span>&emsp;SN :&#160;<span id="deviceSN1"
+                                class="text-white"></span></p>
+
+                        <h5 class="text-info mt-4 mb-2">Notes :</h5>
+
+                        <pre id="oldInfo" class="fs-5 mb-0"></pre>
+
+                        <pre id="contentOfDescriptionDiv1"
+                            class="textChangeDir fs-5 border border-info rounded-3 mt-3 p-3"></pre>
+
+                        <div class="mt-5">
+                            <button type="button" onclick="changeDir(2)" class="arBTN btn btn-info">Ar</button>
+                            <button type="button" onclick="changeDir(1)" class="enBTN btn btn-info d-none">En</button>
+                        </div>
+
+                    </div>
+
+                    <div id="reportDivForRemovedDevice"
+                        class="col-lg-6 mx-auto border border-info rounded-3 bg-black text-white p-5 text-start my-5 d-none">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+
+                            <h5 class="text-info">Technical Report :</h5>
+
+                            <button type="button" onclick="openCloseReportDiv(1000,2)"
+                                class="bg-transparent border-0 fs-3 text-info"><i
+                                    class="fa-regular fa-circle-xmark"></i></button>
+
+                        </div>
+
+                        <textarea name="" id="technicalReport" cols="30" rows="10"
+                            class="textChangeDir w-100 h-100 my-3 rounded-3 p-3"></textarea>
+
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+                            <div class="mt-5 d-none d-md-block">
+                                <button type="button" onclick="changeDir(2)" class="arBTN btn btn-info">Ar</button>
+                                <button type="button" onclick="changeDir(1)"
+                                    class="enBTN btn btn-info d-none">En</button>
+                            </div>
+
+                            <div
+                                class="d-flex justify-content-center justify-content-md-between align-items-center mt-5">
+
+                                <button type="button" onclick="moveToDoneList(indexOfArray,'Rejected')"
+                                    class="me-3 px-4 btn btn-danger">Rejected</button>
+
+                                <button type="button" onclick="moveToDoneList(indexOfArray,'Repaired')"
+                                    class="ms-3 px-4 btn btn-info">Repaired</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-            </div>    
+            </section>
 
-        </div>        
+            <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
 
-    </section>
+            <section id="secondPage" class="py-5 d-none">
 
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+                <div class="container-lg">
+
+                    <div id="table2" class="col-12 mx-auto my-5">
+
+                        <div id="sDB2" class="form-group col-lg-8 mx-auto py-2">
+
+                            <input id="sDB2_2" oninput="searchDB(this.value,2)" type="=text" placeholder="Search"
+                                class="form-control my-4">
+
+                        </div>
+
+                        <div class="w-100 overflow-auto mt-4">
+
+                            <table class="table text-center text-white">
+
+                                <thead class="text-info">
+
+                                    <th>Receipt</th>
+
+                                    <th>Category</th>
+
+                                    <th>SN</th>
+
+                                    <th>Price</th>
+
+                                    <th>Info</th>
+
+                                    <th>Update</th>
+
+                                    <th>Delete</th>
+
+                                </thead>
+
+
+                                <tbody id="tableData2">
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <div
+                            class="container-lg d-flex justify-content-between align-items-center  text-end border border-3 border-info border-end-0 border-start-0 border-bottom-0 mt-5">
+
+                            <div>
+                                <button type="button" onclick="changeDir(2)"
+                                    class="arBTN btn btn-info mt-3 mb-5">Ar</button>
+                                <button type="button" onclick="changeDir(1)"
+                                    class="enBTN btn btn-info mt-3 mb-5 d-none">En</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div id="descriptionDiv2"
+                        class="col-lg-8 mx-auto border border-info rounded-3 p-3 overflow-auto d-none">
+
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+
+                            <h5 class="text-info">The Description :</h5>
+
+                            <button type="button" onclick="closeDescriptionDiv(2)"
+                                class="bg-transparent border-0 text-info fs-3"><i
+                                    class="fa-regular fa-circle-xmark"></i></button>
+
+                        </div>
+
+                        <p class="text-info mb-0">Name &#160;:&#160; <span id="userName2" class="text-white"></span></p>
+
+                        <div class="d-flex justify-content-start align-items-center my-2">
+
+                            <p class="text-info mb-0">Phone :&#160;</p>
+
+                            <a id="userPhoneIcon2" style="text-decoration: none;" href=""
+                                class="bg-transparent text-white ms-2"><i class="fa-solid fa-phone megaI"></i></a>
+
+                            <button type="button" class="btn border-0 text-white fs-5 p-0 mx-2 mb-1"
+                                onclick="openUserWhatsapp(2)">&ensp;<i class="fa-brands fa-whatsapp megaI"></i></button>
+
+                            <div class="d-flex">
+
+                                <p id="userPhoneKey2" class="text-white mb-1 ms-2"></p>
+
+                                <p id="userPhoneNumber2" class="text-white mb-1 ms-1"></p>
+
+                            </div>
+
+                        </div>
+
+                        <p class="text-info mb-2">Received &#160;: <span id="dateOfEnter2"
+                                class="text-white"></span>&emsp;Time : <span id="timeOfEnter2"
+                                class="text-white"></span></p>
+
+                        <p class="text-info mt-3">Delivered : <span id="dateOfOut2" class="text-white"></span>&emsp;Time
+                            : <span class="text-white" id="timeOfOut2"></span></p>
+
+                        <p class="text-info mt-3">Device Type :&#160;<span id="deviceType2"
+                                class="text-white"></span>&emsp;SN :&#160;<span id="deviceSN2"
+                                class="text-white"></span></p>
+
+                        <p class="text-info mt-3">Device Status :&#160;<span id="deviceStatus2"
+                                class="text-white"></span></p>
+
+                        <h5 class="text-info mt-4 mb-3">Notes :</h5>
+
+                        <pre id="contentOfDescriptionDiv2"
+                            class="textChangeDir fs-5 border border-info rounded-3 p-3"></pre>
+
+                        <h5 class="text-info mt-4 mb-3">Technical Report :</h5>
+
+                        <pre id="contentOfReportDiv2" class="textChangeDir fs-5 border border-info rounded-3 p-3"></pre>
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div class="mt-5">
+                                <button type="button" onclick="changeDir(2)" class="arBTN btn btn-info">Ar</button>
+                                <button type="button" onclick="changeDir(1)"
+                                    class="enBTN btn btn-info d-none">En</button>
+                            </div>
+
+                            <button type="button" onclick="createReport()" class="btn btn-outline-warning mt-5">Create
+                                Report</button>
+
+                        </div>
+
+                    </div>
+
+                    <div id="warningDivForDeleteDevice"
+                        class="row vh-100 d-flex justify-content-center align-items-center  d-none">
+
+                        <div
+                            class="col-10 col-lg-6 mx-auto border border-info rounded-3 bg-black text-white p-5 text-center">
+                            <h5>Delete This Device...?</h5>
+
+                            <div class="d-flex justify-content-center mt-5">
+
+                                <button type="button" onclick="displayHiddenWarning(1000000,2)"
+                                    class="mx-3 px-4 btn btn-info">No</button>
+
+                                <button type="button" onclick="deleteDevice()"
+                                    class="mx-3 px-4 btn btn-danger">Yes</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+        </div>
+
+    </main>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
 
     <section id="reportPage" class="bg-white text-black overflow-hidden d-none">
 
-        <div id="reportDiv" class="col-10 mx-auto mt-3 p-5">    
+        <div id="reportDiv" class="col-10 mx-auto py-5">
 
-            <div class="container-lg my-5">    
-            
-                <div class="d-flex flex-column-reverse flex-lg-row justify-content-between align-items-center col-12 mx-auto border border-3 border-info border-end-0 border-start-0 border-top-0  pb-3">    
-    
-                    <div>    
-    
-                        <h1 class="fs-2 text-start"><span class="text-info">C R U D</span></h1>    
-    
-                        <h5 class="fs-2 text-start"><span class="text-info ">C</span>reate <span class="text-info ">R</span>etrieve <span class="text-info ">U</span>pdate <span class="text-info ">D</span>elete</h5>    
-    
-                    </div>        
-    
-                </div>    
-    
+            <div class="container-lg p-0 pb-3">
+
+                <div
+                    class="d-flex justify-content-start justify-content-lg-between align-items-center col-12 mx-auto border border-3 border-info border-end-0 border-start-0 border-top-0  pb-3">
+
+                    <div>
+
+                        <h1 style="font-size: 60px;" class=" text-start fw-bolder"><span
+                                class="text-info">CRUD</span></h1>
+
+                        <h5 class="fs-2 text-start"><span class="text-info ">C</span>reate <span
+                                class="text-info ">R</span>etrieve <span class="text-info ">U</span>pdate <span
+                                class="text-info ">D</span>elete</h5>
+
+                    </div>
+
+                    <div class="m-0 ms-auto">
+
+                        <img id="titleBTN" src="src/Images/Logo-MM.jpg"
+                            style="width: 150px; cursor: pointer;" class=" rounded-circle border border-info border-5" alt="">
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <h5 class="mb-3">Device Information :</h5>    
-                
 
-            <p class="mb-0">Name &#160;:&#160; <span id="userName3" class="text-black"></span></p>    
+            <h5 class="mb-3">Information :</h5>
 
-            <div class="d-flex justify-content-start align-items-center my-2">    
 
-                <p class="mb-0">Phone :&#160;</p>    
+            <p class="mb-0">Name &#160;:&#160; <span id="userName3" class="text-black"></span></p>
 
-                <p id="userPhoneNumber3" class="text-black mb-1 mx-2"></p>    
+            <div class="d-flex justify-content-start align-items-center my-2">
 
-            </div>    
+                <p class="mb-0">Phone :&#160;</p>
 
-            <p class="mb-2">Checked In &#160;&#160; : <span id="dateOfEnter3"  class="text-black"></span>&emsp;Time : <span id="timeOfEnter3" class="text-black"></span></p>    
+                <div class="d-flex">
 
-            <p class="mb-2">Checked Out : <span id="dateOfDeliveryDate3"  class="text-black"></span>&emsp;Time : <span id="dateOfDeliveryTime3" class="text-black"></span></p>    
+                    <p id="userPhoneKey3" class="text-black mb-1 ms-2"></p>
 
-            <p class="mt-3">Device Type :&#160;<span id="deviceType3" class="text-black"></span>&emsp;SN :&#160;<span id="deviceSN3" class="text-black"></span></p>    
-                       
-            <h5 class="my-3">Notes :</h5>    
+                    <p id="userPhoneNumber3" class="text-black mb-1 ms-1"></p>
 
-            <pre id="description3" class="textChangeDir fs-5 border border-dark border-2 rounded-3 p-3 text-black"></pre>
+                </div>
+            </div>
 
-            <h5 class="my-3">Report :</h5>    
+            <p class="mb-2">Checked In &#160;&#160; : <span id="dateOfEnter3" class="text-black"></span>&emsp;Time :
+                <span id="timeOfEnter3" class="text-black"></span></p>
 
-            <pre id="contentOfReportDiv3" class="textChangeDir fs-5 border border-dark border-2 rounded-3 p-3 text-black"></pre>
-     
+            <p class="mb-2">Checked Out : <span id="dateOfDeliveryDate3" class="text-black"></span>&emsp;Time : <span
+                    id="dateOfDeliveryTime3" class="text-black"></span></p>
+
+            <p class="mt-3">Device Type :&#160;<span id="deviceType3" class="text-black"></span>&emsp;SN :&#160;<span
+                    id="deviceSN3" class="text-black"></span></p>
+
+            <h5 class="my-3">Notes :</h5>
+
+            <pre id="description3"
+                class="textChangeDir fs-5 border border-dark border-2 rounded-3 p-3 text-black"></pre>
+
+            <h5 class="my-3">Report :</h5>
+
+            <pre id="contentOfReportDiv3"
+                class="textChangeDir mb-0 fs-5 border border-dark border-2 rounded-3 p-3 text-black"></pre>
+
         </div>
 
     </section>
