@@ -43,6 +43,39 @@ body{
 }
 
 /* ----------------------------------------------------------------------------- */
+/* Navbar ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+#navbar{
+
+    background-color: black;
+}
+
+.active{
+    background-color: #0DCAF0 !important;
+    border-radius: 5px;
+    color: black !important;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Main ------------------------------------------------------------------------ */
+/* ----------------------------------------------------------------------------- */
+
+#theMain{
+    background-image: url(../src/Images/BG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+#mainContent{
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+}
+.megaI:hover{
+    color: #0DCAF0;
+}
+/* ----------------------------------------------------------------------------- */
 /* Footer ---------------------------------------------------------------------- */
 /* ----------------------------------------------------------------------------- */
 
@@ -57,58 +90,3 @@ body{
     border: solid #0DCAF0 10px;
 }
 
-/* ----------------------------------------------------------------------------- */
-/* Shared ---------------------------------------------------------------------- */
-/* ----------------------------------------------------------------------------- */
-
-i:hover{
-    color: #0DCAF0;
-}
-
-.Pointer{
-    cursor: pointer;
-}
-
-.a_None{
-    text-decoration: none;
-}
-
-.SM-BTN-icon{
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    border: solid black 3px;
-    transition: transform 0.75s;
-}
-.SM-BTN-icon:hover{
-    border: solid white 2px;
-    transform: scale(1.25);
-}
-
-.GitHub{
-    color: black;
-}
-
-.LinkedIn{
-    color: #0366C3;
-}
-
-.Facebook{
-    color: #1877F2;
-}
-
-.Twitter{
-    color: #1877F2;
-}
-
-.Instagram{
-    color: #E8067F;
-}
-
-.Youtube{
-    color: red;
-}
-
-.TikTok{
-    color: black;
-}
