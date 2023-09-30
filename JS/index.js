@@ -545,7 +545,7 @@ function openUserWhatsapp(key){
 
 function closeDescriptionDiv(key){
 
-    document.getElementById("navbar").classList.replace("d-none","d-block")
+    document.getElementById("navbar").classList.remove("d-none")
 
     if (key == 1) {
 
@@ -635,7 +635,9 @@ function openCloseReportDiv(index,key){
 
     if (key == 1) {
 
-            for (let i = 0; i < disableEnable.length; i++) {
+        document.getElementById("navbar").classList.add("d-none")
+
+        for (let i = 0; i < disableEnable.length; i++) {
     
             disableEnable[i].classList.add('d-none')
             
@@ -648,6 +650,8 @@ function openCloseReportDiv(index,key){
         document.getElementById("reportDivForRemovedDevice").classList.replace("d-none","d-block")
     
     }else if (key == 2) {
+
+        document.getElementById("navbar").classList.remove("d-none")
 
         for (let i = 0; i < disableEnable.length; i++) {
     
@@ -1034,6 +1038,8 @@ function displayHiddenWarning(i,n){
 
     if (n == 1) {
         
+        document.getElementById('navbar').classList.add('d-none')
+
         for (let i = 0; i < disableEnable.length; i++) {
     
             disableEnable[i].classList.add('d-none')
@@ -1048,6 +1054,8 @@ function displayHiddenWarning(i,n){
     
     }else if (n == 2) {
         
+        document.getElementById('navbar').classList.remove('d-none')
+
         for (let i = 0; i < disableEnable.length; i++) {
     
             disableEnable[i].classList.replace('d-none','d-block')            
