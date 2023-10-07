@@ -232,9 +232,17 @@ function checkAllInputForAdd(){
 
         ){
 
+        addDevice()   
+
         addBTN.classList.replace('btn-outline-info','btn-outline-success')
 
-        return addDevice()
+        setTimeout(function(){
+
+            addBTN.classList.replace('btn-outline-success','btn-outline-info')
+    
+        },1000)
+
+
 
     }else{
 
@@ -269,12 +277,19 @@ function checkAllInputForUpdate(){
 
         ){
 
-        updateBTN.classList.replace('d-block','d-none')
+        updateTheDevice(firstList[indexOfArray].addDate,firstList[indexOfArray].addTime,deviceInfo)
 
-        addBTN.classList.replace('d-none','d-block')
+        updateBTN.classList.replace('btn-outline-warning','btn-outline-success')
 
-        return updateTheDevice(firstList[indexOfArray].addDate,firstList[indexOfArray].addTime,deviceInfo)
+        setTimeout(function(){
 
+            updateBTN.classList.replace('btn-outline-success','btn-outline-warning')
+
+            updateBTN.classList.replace('d-block','d-none')
+
+            addBTN.classList.replace('d-none','d-block')
+    
+        },1000)
     }else{
 
         updateBTN.classList.replace('btn-outline-warning','btn-outline-danger')
