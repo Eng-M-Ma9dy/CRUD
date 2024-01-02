@@ -55,48 +55,6 @@ let ArEn               = [];
 let indexOfArray;
 let deviceInfo;
 
-//----------------------------------------------------------------------------------
-
-if(localStorage.getItem('CRUD_List1') != null){
-
-    firstList = JSON.parse(localStorage.getItem('CRUD_List1'));
-
-    displayDevice(firstList,'tableData1',1);
-
-}else{
-
-    firstList = [];
-    
-}
-
-//----------------------------------------------------------------------------------
-
-if(localStorage.getItem('CRUD_List2') != null){
-
-    secondList = JSON.parse(localStorage.getItem('CRUD_List2'));
-
-    displayDevice(secondList,'tableData2',2);
-
-}else{
-
-    secondList = [];
-}
-
-//----------------------------------------------------------------------------------
-
-if(localStorage.getItem('CRUD_ArEn') != null){
-
-    ArEn = JSON.parse(localStorage.getItem('CRUD_ArEn'));
-
-}else{
-
-    ArEn = [];
-}
-
-
-
-
-
 
 //----------------------------------------------------------------------------------
 
